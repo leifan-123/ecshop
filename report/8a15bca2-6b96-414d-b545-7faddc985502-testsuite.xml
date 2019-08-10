@@ -1,0 +1,33 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1564986527829" stop="1564986570449">
+  <name>test_buy_sales</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1564986527829" status="passed" stop="1564986570449">
+      <name>TestBuySales.test_buy_sales</name>
+      <attachments/>
+      <labels>
+        <label name="severity" value="critical"/>
+        <label name="thread" value="13160-MainThread"/>
+        <label name="host" value="Poppy"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1564986543126" status="passed" stop="1564986570449">
+          <name>使用余额购买促销商品</name>
+          <title>使用余额购买促销商品</title>
+          <attachments>
+            <attachment source="cf2f79ec-92d6-46fb-8a63-2af23e672dcd-attachment.txt" title="点击我的" type="text/plain"/>
+            <attachment source="86c64b6f-4332-48e1-8606-49a341f0f332-attachment.txt" title="购买商品前的金额:" type="text/plain"/>
+            <attachment source="f2d24e47-c049-4c48-9f0c-41b1dad6f494-attachment.txt" title="点击首页" type="text/plain"/>
+            <attachment source="35e4361e-14f7-4951-8465-69834a461b14-attachment.txt" title="任意选择一商品" type="text/plain"/>
+            <attachment source="e9d9ab9d-f852-48e2-b8b4-2ea0726bcdfa-attachment.txt" title="商品详情" type="text/plain"/>
+            <attachment source="759ff677-1515-4157-955c-0fb8beeb0a18-attachment.txt" title="支付界面" type="text/plain"/>
+            <attachment source="5d60f45e-dd67-4a29-abb9-eff317e81f1e-attachment.txt" title="购买商品的金额:" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

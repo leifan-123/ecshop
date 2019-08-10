@@ -1,0 +1,61 @@
+{
+  "6527690b2b9f5d7f611287452c266e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "968330d835cc6d0b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1564986527829,
+        "stop" : 1564986570449,
+        "duration" : 42620
+      }
+    } ]
+  },
+  "7a761bb2e4e3e797614231d235fe403f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "65ed6e4f2386eaad",
+      "status" : "passed",
+      "statusDetails" : "WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to remote server. Original error: Error: socket hang up\n",
+      "time" : {
+        "start" : 1564986571133,
+        "stop" : 1564986618796,
+        "duration" : 47663
+      }
+    } ]
+  },
+  "4b3ade7d60da02914ec3d602b772476a" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6a769b2218bd031c",
+      "status" : "failed",
+      "statusDetails" : "WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy. Proxy error: Could not proxy command to remote server. Original error: Error: socket hang up\n",
+      "time" : {
+        "start" : 1564986429556,
+        "stop" : 1564986527215,
+        "duration" : 97659
+      }
+    } ]
+  }
+}

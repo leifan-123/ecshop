@@ -1,0 +1,128 @@
+{
+  "uid" : "968330d835cc6d0b",
+  "name" : "TestBuySales.test_buy_sales",
+  "fullName" : "test_buy_sales.TestBuySales.test_buy_sales",
+  "historyId" : "6527690b2b9f5d7f611287452c266e",
+  "time" : {
+    "start" : 1564986527829,
+    "stop" : 1564986570449,
+    "duration" : 42620
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "使用余额购买促销商品",
+      "time" : {
+        "start" : 1564986543126,
+        "stop" : 1564986570449,
+        "duration" : 27323
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "94f8f1487334a2e2",
+        "name" : "点击我的",
+        "source" : "94f8f1487334a2e2.txt",
+        "type" : "text/plain",
+        "size" : 18
+      }, {
+        "uid" : "a0e29578e1856625",
+        "name" : "购买商品前的金额:",
+        "source" : "a0e29578e1856625.txt",
+        "type" : "text/plain",
+        "size" : 10
+      }, {
+        "uid" : "79fd829e7557b392",
+        "name" : "点击首页",
+        "source" : "79fd829e7557b392.txt",
+        "type" : "text/plain",
+        "size" : 18
+      }, {
+        "uid" : "e85e302ca2c3fa66",
+        "name" : "任意选择一商品",
+        "source" : "e85e302ca2c3fa66.txt",
+        "type" : "text/plain",
+        "size" : 18
+      }, {
+        "uid" : "1c4c7c2d9a201fd2",
+        "name" : "商品详情",
+        "source" : "1c4c7c2d9a201fd2.txt",
+        "type" : "text/plain",
+        "size" : 12
+      }, {
+        "uid" : "c4ad400eaf3e6e51",
+        "name" : "支付界面",
+        "source" : "c4ad400eaf3e6e51.txt",
+        "type" : "text/plain",
+        "size" : 18
+      }, {
+        "uid" : "fab549953c9352b3",
+        "name" : "购买商品的金额:",
+        "source" : "fab549953c9352b3.txt",
+        "type" : "text/plain",
+        "size" : 3
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "hasContent" : true,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 7
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 7
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "Poppy"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "thread",
+    "value" : "13160-MainThread"
+  }, {
+    "name" : "suite",
+    "value" : "test_buy_sales"
+  }, {
+    "name" : "testClass",
+    "value" : "test_buy_sales"
+  }, {
+    "name" : "testMethod",
+    "value" : "TestBuySales.test_buy_sales"
+  }, {
+    "name" : "package",
+    "value" : "test_buy_sales"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "968330d835cc6d0b.json",
+  "parameterValues" : [ ]
+}

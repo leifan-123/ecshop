@@ -1,0 +1,258 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1564986429556" stop="1564986527215">
+  <name>test_buy_goods</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1564986429556" status="failed" stop="1564986527215">
+      <name>TestBuyGoods.test_buy_goods</name>
+      <failure>
+        <message>WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy. Proxy error: Could not proxy command to remote server. Original error: Error: socket hang up
+</message>
+        <stack-trace>self = &lt;test_buy_goods.TestBuyGoods object at 0x000001D98897B320&gt;
+
+    @pytest.allure.severity(pytest.allure.severity_level.CRITICAL)
+    @allure.step(title="使用余额购买商品")
+    def test_buy_goods(self):
+        allure.attach("点击我的", "进入个人中心")
+        # 进入我的
+        PersonalPage(self.driver).personal_click()
+        # 获取金额
+        money_b = float(PersonalPage(self.driver).get_value())
+        allure.attach("购买商品前的金额:", f'{money_b}')
+        allure.attach("点击首页", "进入商品促销")
+        # 点击首页
+        HomePage(self.driver).homepage_click()
+        time.sleep(5)
+        # 选择商品
+        allure.attach("选择商品", "进入商品详情")
+        HomePage(self.driver).goods_click()
+        time.sleep(5)
+        allure.attach("进入商品", "加入购物车")
+        # 添加购物车
+        CarPage(self.driver).addcar_click()
+        # 确定
+        CarPage(self.driver).click_ensure()
+        allure.attach("选择商品", "进入购物车")
+        # 点击购物车
+        CarPage(self.driver).gocar_click()
+        # 点击立即购买
+        allure.attach("购物车", "立即购买")
+        BuySalesPage(self.driver).buy_click()
+        time.sleep(5)
+        # 点击使用余额
+        allure.attach("支付界面", "使用余额支付")
+        CheckOrderPage(self.driver).balance_click()
+        time.sleep(2)
+        # 获取订单金额
+        price = float(CheckOrderPage(self.driver).get_goods_price().strip("¥"))
+        allure.attach("购买商品的金额:", f'{price}')
+        # 点击提交订单
+        CheckOrderPage(self.driver).submit_click()
+        time.sleep(2)
+        # 输入支付密码
+        text = "123456"
+        CheckOrderPage(self.driver).check_pwd_input(text)
+        # 点击确定
+        CheckOrderPage(self.driver).sure_click()
+        time.sleep(2)
+        # 点击返回上一页
+&gt;       self.driver.back()
+
+scripts\test_buy_goods.py:65: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+d:\python3.6\lib\site-packages\selenium\webdriver\remote\webdriver.py:813: in back
+    self.execute(Command.GO_BACK)
+d:\python3.6\lib\site-packages\selenium\webdriver\remote\webdriver.py:321: in execute
+    self.error_handler.check_response(response)
+d:\python3.6\lib\site-packages\appium\webdriver\errorhandler.py:29: in check_response
+    raise wde
+d:\python3.6\lib\site-packages\appium\webdriver\errorhandler.py:24: in check_response
+    super(MobileErrorHandler, self).check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;appium.webdriver.errorhandler.MobileErrorHandler object at 0x000001D98897B4E0&gt;
+response = {'status': 500, 'value': '{"value":{"error":"unknown error","message":"An unknown server-side error occurred while pro...s\\\\app\\\\node_modules\\\\appium\\\\node_modules\\\\appium-base-driver\\\\lib\\\\protocol\\\\protocol.js:447:37)"}}'}
+
+    def check_response(self, response):
+        """
+            Checks that a JSON response from the WebDriver does not have an error.
+    
+            :Args:
+             - response - The JSON response from the WebDriver server as a dictionary
+               object.
+    
+            :Raises: If the response contains an error message.
+            """
+        status = response.get('status', None)
+        if status is None or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get('value', None)
+            if value_json and isinstance(value_json, basestring):
+                import json
+                try:
+                    value = json.loads(value_json)
+                    if len(value.keys()) == 1:
+                        value = value['value']
+                    status = value.get('error', None)
+                    if status is None:
+                        status = value["status"]
+                        message = value["value"]
+                        if not isinstance(message, basestring):
+                            value = message
+                            message = message.get('message')
+                    else:
+                        message = value.get('message', None)
+                except ValueError:
+                    pass
+    
+        exception_class = ErrorInResponseException
+        if status in ErrorCode.NO_SUCH_ELEMENT:
+            exception_class = NoSuchElementException
+        elif status in ErrorCode.NO_SUCH_FRAME:
+            exception_class = NoSuchFrameException
+        elif status in ErrorCode.NO_SUCH_WINDOW:
+            exception_class = NoSuchWindowException
+        elif status in ErrorCode.STALE_ELEMENT_REFERENCE:
+            exception_class = StaleElementReferenceException
+        elif status in ErrorCode.ELEMENT_NOT_VISIBLE:
+            exception_class = ElementNotVisibleException
+        elif status in ErrorCode.INVALID_ELEMENT_STATE:
+            exception_class = InvalidElementStateException
+        elif status in ErrorCode.INVALID_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR \
+                or status in ErrorCode.INVALID_XPATH_SELECTOR_RETURN_TYPER:
+            exception_class = InvalidSelectorException
+        elif status in ErrorCode.ELEMENT_IS_NOT_SELECTABLE:
+            exception_class = ElementNotSelectableException
+        elif status in ErrorCode.ELEMENT_NOT_INTERACTABLE:
+            exception_class = ElementNotInteractableException
+        elif status in ErrorCode.INVALID_COOKIE_DOMAIN:
+            exception_class = InvalidCookieDomainException
+        elif status in ErrorCode.UNABLE_TO_SET_COOKIE:
+            exception_class = UnableToSetCookieException
+        elif status in ErrorCode.TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.SCRIPT_TIMEOUT:
+            exception_class = TimeoutException
+        elif status in ErrorCode.UNKNOWN_ERROR:
+            exception_class = WebDriverException
+        elif status in ErrorCode.UNEXPECTED_ALERT_OPEN:
+            exception_class = UnexpectedAlertPresentException
+        elif status in ErrorCode.NO_ALERT_OPEN:
+            exception_class = NoAlertPresentException
+        elif status in ErrorCode.IME_NOT_AVAILABLE:
+            exception_class = ImeNotAvailableException
+        elif status in ErrorCode.IME_ENGINE_ACTIVATION_FAILED:
+            exception_class = ImeActivationFailedException
+        elif status in ErrorCode.MOVE_TARGET_OUT_OF_BOUNDS:
+            exception_class = MoveTargetOutOfBoundsException
+        elif status in ErrorCode.JAVASCRIPT_ERROR:
+            exception_class = JavascriptException
+        elif status in ErrorCode.SESSION_NOT_CREATED:
+            exception_class = SessionNotCreatedException
+        elif status in ErrorCode.INVALID_ARGUMENT:
+            exception_class = InvalidArgumentException
+        elif status in ErrorCode.NO_SUCH_COOKIE:
+            exception_class = NoSuchCookieException
+        elif status in ErrorCode.UNABLE_TO_CAPTURE_SCREEN:
+            exception_class = ScreenshotException
+        elif status in ErrorCode.ELEMENT_CLICK_INTERCEPTED:
+            exception_class = ElementClickInterceptedException
+        elif status in ErrorCode.INSECURE_CERTIFICATE:
+            exception_class = InsecureCertificateException
+        elif status in ErrorCode.INVALID_COORDINATES:
+            exception_class = InvalidCoordinatesException
+        elif status in ErrorCode.INVALID_SESSION_ID:
+            exception_class = InvalidSessionIdException
+        elif status in ErrorCode.UNKNOWN_METHOD:
+            exception_class = UnknownMethodException
+        else:
+            exception_class = WebDriverException
+        if value == '' or value is None:
+            value = response['value']
+        if isinstance(value, basestring):
+            if exception_class == ErrorInResponseException:
+                raise exception_class(response, value)
+            raise exception_class(value)
+        if message == "" and 'message' in value:
+            message = value['message']
+    
+        screen = None
+        if 'screen' in value:
+            screen = value['screen']
+    
+        stacktrace = None
+        if 'stackTrace' in value and value['stackTrace']:
+            stacktrace = []
+            try:
+                for frame in value['stackTrace']:
+                    line = self._value_or_default(frame, 'lineNumber', '')
+                    file = self._value_or_default(frame, 'fileName', '&lt;anonymous&gt;')
+                    if line:
+                        file = "%s:%s" % (file, line)
+                    meth = self._value_or_default(frame, 'methodName', '&lt;anonymous&gt;')
+                    if 'className' in frame:
+                        meth = "%s.%s" % (frame['className'], meth)
+                    msg = "    at %s (%s)"
+                    msg = msg % (meth, file)
+                    stacktrace.append(msg)
+            except TypeError:
+                pass
+        if exception_class == ErrorInResponseException:
+            raise exception_class(response, message)
+        elif exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if 'data' in value:
+                alert_text = value['data'].get('text')
+            elif 'alert' in value:
+                alert_text = value['alert'].get('text')
+            raise exception_class(message, screen, stacktrace, alert_text)
+&gt;       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy. Proxy error: Could not proxy command to remote server. Original error: Error: socket hang up
+
+d:\python3.6\lib\site-packages\selenium\webdriver\remote\errorhandler.py:242: WebDriverException</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="critical"/>
+        <label name="thread" value="13160-MainThread"/>
+        <label name="host" value="Poppy"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps>
+        <step start="1564986446386" status="failed" stop="1564986466331">
+          <name>使用余额购买商品</name>
+          <title>使用余额购买商品</title>
+          <attachments>
+            <attachment source="8018b3ff-f60f-4ffc-b7c7-2d186e311829-attachment.txt" title="点击我的" type="text/plain"/>
+            <attachment source="7e768614-b1d9-43ba-8df1-823810de004c-attachment.txt" title="购买商品前的金额:" type="text/plain"/>
+            <attachment source="91f8f9c3-3f92-4279-afae-89d1b0f326a1-attachment.txt" title="点击首页" type="text/plain"/>
+            <attachment source="5f215fa8-2214-4f73-846a-dc23939142e6-attachment.txt" title="选择商品" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+        <step start="1564986481979" status="failed" stop="1564986527162">
+          <name>使用余额购买商品</name>
+          <title>使用余额购买商品</title>
+          <attachments>
+            <attachment source="1b194520-dd30-4a9f-9cbc-9e58cb3a20b8-attachment.txt" title="点击我的" type="text/plain"/>
+            <attachment source="745dd7ba-0db9-4724-9a75-2cdc7f4a3a76-attachment.txt" title="购买商品前的金额:" type="text/plain"/>
+            <attachment source="81823732-09be-444d-89d5-1c143820ea63-attachment.txt" title="点击首页" type="text/plain"/>
+            <attachment source="0e74a8a4-bd99-4a24-9c4b-9d8453e43716-attachment.txt" title="选择商品" type="text/plain"/>
+            <attachment source="9c497637-eb7f-45b7-b5b2-21d6de6b3226-attachment.txt" title="进入商品" type="text/plain"/>
+            <attachment source="6bad83e4-bf4b-4d8e-8d3a-3099e6c58073-attachment.txt" title="选择商品" type="text/plain"/>
+            <attachment source="def8a59c-d351-4d31-becb-fab1549dd384-attachment.txt" title="购物车" type="text/plain"/>
+            <attachment source="f4a2214d-01bb-4cce-8b92-2873506c8b1d-attachment.txt" title="支付界面" type="text/plain"/>
+            <attachment source="2dbcb9f1-4124-4bbb-afbf-d503faaada74-attachment.txt" title="购买商品的金额:" type="text/plain"/>
+          </attachments>
+          <steps/>
+        </step>
+      </steps>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

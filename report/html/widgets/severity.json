@@ -1,0 +1,31 @@
+[ {
+  "uid" : "6a769b2218bd031c",
+  "name" : "TestBuyGoods.test_buy_goods",
+  "time" : {
+    "start" : 1564986429556,
+    "stop" : 1564986527215,
+    "duration" : 97659
+  },
+  "status" : "failed",
+  "severity" : "critical"
+}, {
+  "uid" : "65ed6e4f2386eaad",
+  "name" : "TestGoodsComment.test_goods_comment",
+  "time" : {
+    "start" : 1564986571133,
+    "stop" : 1564986618796,
+    "duration" : 47663
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "968330d835cc6d0b",
+  "name" : "TestBuySales.test_buy_sales",
+  "time" : {
+    "start" : 1564986527829,
+    "stop" : 1564986570449,
+    "duration" : 42620
+  },
+  "status" : "passed",
+  "severity" : "critical"
+} ]

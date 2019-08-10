@@ -1,0 +1,52 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "Poppy",
+    "children" : [ {
+      "name" : "13160-MainThread",
+      "children" : [ {
+        "name" : "TestBuyGoods.test_buy_goods",
+        "uid" : "6a769b2218bd031c",
+        "parentUid" : "0fd8e5956eb39914d8c845896be3881e",
+        "status" : "failed",
+        "time" : {
+          "start" : 1564986429556,
+          "stop" : 1564986527215,
+          "duration" : 97659
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TestGoodsComment.test_goods_comment",
+        "uid" : "65ed6e4f2386eaad",
+        "parentUid" : "0fd8e5956eb39914d8c845896be3881e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1564986571133,
+          "stop" : 1564986618796,
+          "duration" : 47663
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "TestBuySales.test_buy_sales",
+        "uid" : "968330d835cc6d0b",
+        "parentUid" : "0fd8e5956eb39914d8c845896be3881e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1564986527829,
+          "stop" : 1564986570449,
+          "duration" : 42620
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0fd8e5956eb39914d8c845896be3881e"
+    } ],
+    "uid" : "2df93f99a725a18220fedfa9692a65fc"
+  } ]
+}

@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not proxy. Proxy error: Could not proxy command to remote server. Original error: Error: socket hang up\n",
+      "children" : [ {
+        "name" : "TestBuyGoods.test_buy_goods",
+        "uid" : "6a769b2218bd031c",
+        "parentUid" : "4173c466bb86b7c1df78313806f94fe7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1564986429556,
+          "stop" : 1564986527215,
+          "duration" : 97659
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4173c466bb86b7c1df78313806f94fe7"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

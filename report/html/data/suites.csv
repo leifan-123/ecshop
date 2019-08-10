@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Aug 05 14:29:31 CST 2019","Mon Aug 05 14:30:18 CST 2019","47663","","test_goods_comment","","test_goods_comment","TestGoodsComment.test_goods_comment","TestGoodsComment.test_goods_comment","商品评论"
+"passed","Mon Aug 05 14:28:47 CST 2019","Mon Aug 05 14:29:30 CST 2019","42620","","test_buy_sales","","test_buy_sales","TestBuySales.test_buy_sales","TestBuySales.test_buy_sales",""
+"failed","Mon Aug 05 14:27:09 CST 2019","Mon Aug 05 14:28:47 CST 2019","97659","","test_buy_goods","","test_buy_goods","TestBuyGoods.test_buy_goods","TestBuyGoods.test_buy_goods",""
